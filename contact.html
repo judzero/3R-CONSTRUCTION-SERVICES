@@ -113,23 +113,24 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form action="https://docs.google.com/forms/d/1KrwUkn1xh4Mjs1QMcNSCfHX5Gsym_ZaO_NI9VQYqyqM/formResponse" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200" target="hidden_iframe" onsubmit="submitted=true">
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" name="entry.1329241604" class="form-control" placeholder="Your Name" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input type="email" class="form-control" name="entry.1435362010" placeholder="Your Email" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" class="form-control" name="entry.310447276" placeholder="Subject" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="entry.1113027972" rows="6" placeholder="Message" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -222,6 +223,15 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function () {
+      setTimeout(() => {
+      alert("Thank you! Your response has been recorded.");
+      form.reset();
+      }, 500); // Small delay to allow Google to process the submission
+  });
+</script>
 
 </body>
 
