@@ -143,6 +143,29 @@
 
               </div>
             </form>
+            <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg">
+                  
+                  <div class="modal-body text-center p-5">
+                    
+                    <div class="mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="#198754" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                    </div>
+                    
+                    <h3 class="modal-title mb-3 fw-bold" id="successModalLabel">Query Sent!</h3>
+                    <p class="text-muted text-wrap">Your response has been recorded.</p>
+                    <p class="text-muted text-wrap">We will try and get back to you as soon as possible.</p>
+
+                    
+                    <button type="button" class="btn btn-success px-5 py-2 fw-semibold" data-bs-dismiss="modal">Done</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
           </div><!-- End Contact Form -->
 
         </div>
@@ -224,14 +247,23 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-  const form = document.querySelector("form");
-  form.addEventListener("submit", function () {
-      setTimeout(() => {
-      alert("Thank you! Your response has been recorded.");
-      form.reset();
-      }, 500); // Small delay to allow Google to process the submission
-  });
-</script>
+      // Grab the form
+      const form = document.querySelector("form");
+      
+      // Initialize the Bootstrap Modal via JavaScript
+      // Note: This assumes you have Bootstrap 5 JS loaded on your site
+      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+
+      // Handle the form submission
+      form.addEventListener("submit", function () {
+          setTimeout(() => {
+              // Show the Bootstrap modal
+              successModal.show(); 
+              // Clear the form fields
+              form.reset();
+          }, 500); // Small delay to allow Google to process the submission
+      });
+  </script>
 
 </body>
 
